@@ -43,7 +43,7 @@ def move(src, dest, file):
 			return True
 	return False
 
-def create(dir, file, contents):
+def create(file, contents, dir=''):
 	"""Creates a file in the specified directory"""
 	path = os.path.join(basedir, dir)
 	if not os.path.exists(path):
