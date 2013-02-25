@@ -9,6 +9,7 @@ import os.path
 import properties
 import webfileutils
 
+# Class to manage comments as html files in the file system
 class File:
 	def create(text):
 		"""Creates a new comment in the community"""
