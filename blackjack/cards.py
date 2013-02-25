@@ -84,3 +84,6 @@ class Deck(Hand):
                                 else:
                                         print ("Out of cards")
 
+#if __name__ == "__main__"
+#        print ("This module is not meant to be run directly!")
+#        input("\n\nPress any key to exit.")
