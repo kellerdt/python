@@ -58,18 +58,21 @@ class Hand(object):
 		self.cards.append(card)
 	
 	def give(self, card, otherHand):
-		self.cards.remove(card)
-		otherHand.add(card)
+                self.cards.remove(card)
+                otherHand.add(card)
 	
 	def remove(self, card):
 		self.cards.remove(card)
+
+	def size(self):
+                return len(self.cards)
 
 class Deck(Hand):
         """ The full deck of cards used to play """
         def populate(self):
                 for suit in Card.SUITS:
                         for rank in Card.RANKS:
-                                self.add(Card(rank,suit))
+                                self.add(FlipableCard(rank,suit))
 
         def shuffle(self):
                 import random
@@ -83,6 +86,15 @@ class Deck(Hand):
                                         self.give(topCard, hand)
                                 else:
                                         print ("Out of cards")
+                                        
+        def get(self, hand, num):
+                cards = []
+                for i in range(num):
+                        if self.cards:
+                                self.give(self.cards[0], hand)
+                        else:
+                                print ("Out of cards")
+        
 
 #if __name__ == "__main__"
 #        print ("This module is not meant to be run directly!")
